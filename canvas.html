@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#a,#b,#c,#d
+{
+width:60px;
+}
+#d1
+{
+width:400px;
+height:400px;
+border:1px solid blue;
+margin:auto;
+
+}
+#d3
+{
+width:400px;
+height:50px;
+border:1px solid blue;
+margin:auto;
+background-color:pink;
+
+}
+#d2
+{
+width:200px;
+height:300px;
+border:1px solid blue;
+margin-left:100px;
+margin-top:40px;
+background-color:blue;
+}
+.i
+{
+margin-left:23px;
+height:40px;
+margin-top:4px;
+}
+
+</style>
+</head>
+<body>
+<div id="d1">
+<div id="d3">
+<input type="button" value="Draw" class="i" id="a" onclick="drw(x,y,w,h)">
+<input type="button" value="Left shift" class="i" onclick="lef()" >
+<input type="button" value="Right shift"class="i"  onclick="rig()" >
+<input type="button" value="Delete" class="i" onclick="rmv()" >
+</div>
+<div id="d2">
+<canvas id="cv"></canvas>
+</div>
+</div>
+<script>
+cn=document.getElementById("cv");
+c=cn.getContext("2d");
+x=40,y=40,w=120,h=75;
+
+function drw(x,y,w,h)
+{
+    c.clearRect(0,0, 500, 500);
+    c.fillStyle = 'yellow';
+	c.lineWidth="5";
+    c.stroke();
+    c.fillRect(x, y, w, h);
+}
+function rmv()
+{
+	
+	c.clearRect(0,0,cn.width,cn.height);
+	
+}
+function lef()
+{
+
+	x=x-10;
+	drw(x,y,w,h);
+}
+
+function rig()
+{
+
+	x=x+10;
+	drw(x,y,w,h);
+}
+</script>
+</body>

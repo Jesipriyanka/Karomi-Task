@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+</head>
+<body>
+<table id="tbl" border="1">
+<input type="button" value="ADD"onclick="addrow()">
+<tr>
+<td>serial number</td>
+<td>action</td>
+</tr>
+</table>
+</body>
+<script>
+var i=1;
+function addrow()
+{
+
+  var table = document.getElementById("tbl");
+
+  var row = table.insertRow(-1);
+  var cel1 = row.insertCell(0);
+  var cel2 = row.insertCell(1);
+  cel1.innerHTML = ""+i++;
+  cel2.innerHTML = "<input type='button'onclick='del()'value='delete'/>";
+}
+function del()
+{
+ document.getElementById("tbl").deleteRow("1");
+}
+   
+</script>
+</html>
